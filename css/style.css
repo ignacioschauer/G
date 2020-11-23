@@ -45,7 +45,11 @@
             color:#212529;
             text-align:left;
             background-color:#fff}
-        [tabindex="-1"]:focus:not(:focus-visible){outline:0!important}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;
+        [tabindex="-1"]:focus:not(:focus-visible){outline:0!important}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}
+            p{
+                margin-top:0;
+                margin-bottom:1rem}
+            abbr[data-original-title],abbr[title]{text-decoration:underline;
             -webkit-text-decoration:underline dotted;
             text-decoration:underline dotted;
             cursor:help;
@@ -56,18 +60,24 @@
                 font-style:normal;
                 line-height:inherit}
             dl,ol,ul{
-                margin-bottom:1rem;
                 list-style-type: none; 
                 text-align: left; 
-                width: 300px; 
+
+                min-width: 220px; 
                 height: auto;
-                margin-right: auto; 
-                margin-left: auto; 
+                margin-top: 10%;
+                margin-bottom: 10%;
+                margin-right: 10%; 
+                margin-left: 10%; 
                 padding-left: 0px;
                 color: black;
-                background-color: white; 
+                background-color:transparent; 
                 position: relative;
-                padding-bottom: 3%;
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                line-height: 2rem;               
+                
                 }
             ol ol,ol ul,ul ol,ul ul{margin-bottom:0}
             dt{font-weight:700}
@@ -107,9 +117,7 @@
                 -ms-overflow-style:scrollbar}
             figure{
                 margin:0 0 1rem}
-            img{
-                vertical-align:middle;
-                border-style:none}
+
             svg{
                 overflow:hidden;
                 vertical-align:middle}
@@ -5144,8 +5152,6 @@
             padding-bottom:.5rem!important}
         .pl-2,.px-2{
             padding-left:.5rem!important}
-        .p-3{
-            padding:1rem!important}
         .pt-3,.py-3{
             padding-top:1rem!important}
         .pr-3,.px-3{
@@ -5915,13 +5921,6 @@
  * Globals
  */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -6062,19 +6061,19 @@ button:hover {
   }
 
 header {
-    width: 100%!important;
-    
+    width: 100%!important;   
 }
+
 
 /* The Modal (background) */
 .modalDiv {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    position: absolute;  /*Stay in place */
     z-index: 5!; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 120%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -6083,28 +6082,30 @@ header {
   /* Modal Content/Box */
   .modal-contentDiv {
     background-color: #fefefe;
-    padding-top: 1%;
     border: 2px solid rgb(54, 54, 54);
-    width: 30%; /* Could be more or less, depending on screen size */
-    min-width: 420px;
+    width: 31%; /* Could be more or less, depending on screen size */
+    min-width: 300px;
+    margin-top: 7.5%;
+    margin-left: auto; 
+    margin-right: auto; 
     min-height: 300px;
     height: auto; 
-    position: absolute; 
-    top: 0%;
-    left: 0%;
-    bottom: 50%;
-    right: 0;
+    position: relative; 
     z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
   }
   
   /* The Close Button */
   .closeDiv {
     color: #aaa;
     position: absolute; 
-    top: -1.2%;
+    top: -1%;
     right: 2.1%;
     font-size: 25px;
     font-weight: bold;
+    z-index: 2;
   }
   
   .closeDiv:hover,
@@ -6120,78 +6121,349 @@ header {
       font-weight: 350; 
     }
 
+  #banner {
+      background-color: rgb(241, 237, 237);
+      width: 100%;
+      height: 12.5%;
+      position: absolute;
+      border-bottom: 2px double white;
+      top: 0;
+  }
+
+  #flag {
+      border: 2px solid rgb(54, 54, 54);
+      width: 31%; /* Could be more or less, depending on screen size */
+      min-width: 300px;
+      margin-top: 2%;
+      margin-left: auto; 
+      margin-right: auto; 
+      height: auto; 
+      position: relative; 
+      z-index: 10; 
+      overflow: hidden;     
+}
+
+img {
+    vertical-align:middle;
+    border-style:none;
+    max-width:100%;
+    max-height: auto;
+    object-fit: cover
+}
+
+ul #countryName {
+    font-size: 1.5rem;
+    font-weight: 400!important;
+    text-align: center!important
+}
+
+#banner {
+    height: 12.5%;
+}
 
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
+@media (min-width: 1350px) and (orientation: landscape) {
   
-    
-    
+    h3 {
+        margin-top: 1.5%;
+        font-size: 2rem; 
+    }
+  
+  select {
+        width: 20%;
+        min-width: 150px;
+        font-size: 1.3rem; 
+        margin-top: -1%
+    }
+
+  option {
+        font-size: 1rem; 
+    }
+  
+  .modal-contentDiv {
+      margin-top: 0%;
+      font-size: 1.1rem;  
+      width: 40%; 
+      
+    }
+
+   ul {
+      line-height: 3rem;
+      font-size: 1.2rem;
+   }
+
+   ul #countryName {
+        font-size: 2rem;
+    }
+
+   .cover-container {
+        top: 22%;
+    }
+
+   #banner {
+        height: 9%;
+    }
   }
+
   
   /* 
     ##Device = Laptops, Desktops
     ##Screen = B/w 1025px to 1280px
   */
+
+  @media (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape) {
+
+    h3 {
+        margin-top: 3.5%;
+        font-size: 2.1rem; 
+    }
   
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-   
-    
+  select {
+        width: 20%;
+        min-width: 150px;
+        font-size: 1.8rem; 
+    }
+
+  option {
+        font-size: 1rem; 
+    }
+  
+  .modal-contentDiv {
+      margin-top: 0%;
+      font-size: 1.1rem;  
+      width: 40%; 
+      
+    }
+
+   ul {
+      line-height: 3rem;
+      font-size: 1.5rem;
+   }
+
+   ul #countryName {
+        font-size: 2rem;
+    }
+
+   .cover-container {
+        top: 22%;
+    }
+
+   #banner {
+        height: 7%;
+    }
   }
   
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    
-    
+  @media (min-width: 1024px) and (max-width: 1280px) and (orientation: portrait) {
+
+    h3 {
+        margin-top: 3.5%;
+        font-size: 2.5rem; 
   }
   
+  select {
+        width: 30%;
+        min-width: 150px;
+        font-size: 2rem; 
+  }
+
+  option {
+      font-size: 1rem; 
+      }
+  
+  .modal-contentDiv {
+      margin-top: 25%;
+      font-size: 2rem; 
+      width: 55%     
+  }
+
+  ul {
+      line-height: 4rem;
+      width: 80%;
+  }
+
+  ul #countryName {
+      font-size: 2.5rem;
+      font-weight: 450;
+  }
+
+  .cover-container {
+      top: 15%;
+  }
+
+  #banner {
+      height: 8%;
+  }
+
+  .closeDiv {
+      top: -0.1%;
+  }
+  
+  }
+    
   /* 
     ##Device = Tablets, Ipads (landscape)
     ##Screen = B/w 768px to 1024px
   */
+
+
+  @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+
+    h3 {
+          margin-top: 3.5%;
+          font-size: 2.1rem; 
+    }
+    
+    select {
+          width: 30%;
+          min-width: 150px;
+          font-size: 1.7rem; 
+    }
+
+    option {
+        font-size: 1rem; 
+        }
+    
+    .modal-contentDiv {
+        margin-top: 25%;
+        font-size: 1.5rem; 
+        width: 55%     
+    }
+
+    ul {
+        line-height: 3rem;
+        width: 80%;
+    }
+
+    ul #countryName {
+        font-size: 2rem;
+    }
+
+    .cover-container {
+        top: 15%;
+    }
+
+    #banner {
+        height: 8%;
+    }
+
+    .closeDiv {
+        top: -0.1%;
+    }
+    
+    }
   
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    
-    
+  @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+
+  h3 {
+        margin-top: 2.5%;
+        font-size: 1.5rem; 
+    }
+  
+  select {
+        width: 25%;
+        min-width: 150px;
+        font-size: 1.1rem; 
+        margin-top: -5%
+    }
+
+  option {
+        font-size: 1.1rem; 
+  }
+  
+  .modal-contentDiv {
+      margin-top: 0%;
+      font-size: 1rem;   
+      width: 50%;
+    }
+
+  .cover-container {
+    top: 25%;
+    }
+
+  ul {
+    line-height: 2.5rem;
+  }
+
+  ul #countryName {
+    font-size: 1.5rem;
+    }
+
+  #banner {
+    height: 8%;
+    }
+
+  .closeDiv {
+    top: -0.3%
+  }
+  
   }
   
   /* 
     ##Device = Low Resolution Tablets, Mobiles (Landscape)
     Almost Ready
   */
+
+  @media (min-width: 481px) and (max-width: 767px) and (orientation : landscape) {
+
+    h3 {
+        margin-top: 1.5%;
+        font-size: 1.5rem; 
+      }
   
-  @media (min-width: 481px) and (max-width: 767px) {
+    select {
+        width: 25%;
+        min-width: 150px;
+        font-size: 1rem;
+        margin-top: -10%
+      }
+  
+    .modal-contentDiv {
+      font-size: 0.9rem;
+      margin-top: 0%
+      }
+  
+    .cover-container {
+      top: 25%;
+      }
+  
+    #banner {
+      height: 8%;
+      } 
+
+    .closeDiv {
+      top: -0.9%
+      }
+  }
+  
+  @media (min-width: 481px) and (max-width: 767px) and (orientation : portrait) {
     
   h3 {
-      margin-top: 5%;
-      font-size: 1.8rem; 
-  }
+      margin-top: 2%;
+      font-size: 1.5rem; 
+    }
 
   select {
-      width: 40%;
+      width: 30%;
       min-width: 150px;
-      font-size: 1.3rem; 
-  }
+      font-size: 1rem; 
+    }
 
   .modal-contentDiv {
-      position: absolute;
-      top: 7%;
-      left: 0;
-      right: 0;
-      min-width: 462px;
-      font-size: 1.2rem; 
+    font-size: 0.9rem
     
-  }
+    }
+
+  .cover-container {
+    top: 25%;
+    }
+
+  #banner {
+    height: 10.5%;
+    }
 
   }
   
@@ -6199,33 +6471,151 @@ header {
     ##Device = Most of the Smartphones Mobiles (Portrait)
     ##Screen = B/w 320px to 479px
   */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
+
+  @media (min-width: 411px) and (max-width: 480px) and (orientation : portrait) {
     
     h3 {
-        margin-top: 4%;
-        font-size: 1.3rem; 
+        margin-top: 8%;
+        font-size: 1.5rem; 
     }
   
     select {
         width: 40%;
         min-width: 150px;
+        font-size: 1.3rem; 
+    }
+
+    option {
         font-size: 1rem; 
     }
-  
+
     .modal-contentDiv {
-        position: absolute;
-        top: 7%;
-        left: 0;
-        right: 0;
-        bottom: 50%;
-        min-width: 315px;
-        font-size: 0.8rem; 
-      
+        margin-top: 4%;
+        font-size: 1.1rem; 
+        
     }
 
     ul {
-        width: 85%;
+        line-height: 2.3rem;
+        margin-left: 12%
     }
+
+    .closeDiv {
+        top: -0.5%;
+    }
+
+    .cover-container {
+        position: absolute;
+        top: 20%;
+        z-index: 0;
+    }
+
+    #banner {
+        height: 8%;
+    }
+    }
+
+   @media (min-width: 411px) and (max-width: 480px) and (orientation : landscape) {
     
-  }
+    h3 {
+        margin-top: 4%;
+        font-size: 1.rem; 
+    }
+  
+    select {
+        width: 40%;
+        min-width: 150px;
+        font-size: 1.2rem; 
+        margin-top: -2%;
+    }
+
+    .modal-contentDiv {
+        margin-top: 2%;
+        font-size: 1rem
+        
+    }
+
+    .cover-container {
+        position: absolute;
+        top: 40%;
+        z-index: 0;
+    }
+
+    #banner {
+        height: 11%;
+    }
+    }
+  
+  @media (min-width: 320px) and (max-width: 410px) and (orientation : portrait) {
+    
+    h3 {
+        margin-top: 6%;
+        font-size: 1.5rem; 
+    }
+  
+    select {
+        width: 40%;
+        min-width: 150px;
+        font-size: 1.2rem; 
+    }
+
+    option {
+        font-size: 1rem; 
+        }
+
+    .modal-contentDiv {
+        margin-top: 4%;
+        font-size: 1.1rem; 
+        
+    }
+
+    ul {
+        line-height: 2.3rem;
+        margin-left: 12%
+    }
+
+    .closeDiv {
+        top: -0.5%;
+    }
+
+    .cover-container {
+        position: absolute;
+        top: 20%;
+        z-index: 0;
+    }
+
+    #banner {
+        height: 7%;
+    }
+    }
+
+   @media (min-width: 320px) and (max-width: 410px) and (orientation : landscape) {
+    
+    h3 {
+        margin-top: 4%;
+        font-size: 1.rem; 
+    }
+  
+    select {
+        width: 40%;
+        min-width: 150px;
+        font-size: 1.2rem; 
+        margin-top: -2%;
+    }
+
+    .modal-contentDiv {
+        margin-top: 2%;
+        font-size: 1rem
+        
+    }
+
+    .cover-container {
+        position: absolute;
+        top: 40%;
+        z-index: 0;
+    }
+
+    #banner {
+        height: 11%;
+    }
+    }
