@@ -18,6 +18,7 @@ var myIcon = new L.Icon ({
     iconUrl: 'libs/images/myIcon.png',
     iconAnchor: [15, 30],
     popupAnchor: [0, -25]
+
 })
 
 
